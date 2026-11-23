@@ -69,6 +69,9 @@ Surfaces above are read from each project's `manifest.json`; SecuriTeam's AMO
 build is not on GitHub, but its listing describes itself as a "developer tool
 panel".
 
+## In-page overlay (F9 - Hide/Show)
+<img width="1915" height="619" alt="image" src="https://github.com/user-attachments/assets/aa4e19d3-e80d-4e61-88a0-200266af5dfa" />
+
 ---
 
 ## Install
