@@ -40,6 +40,37 @@ also means it cannot appear on privileged pages (`about:`, `view-source:`,
 
 ---
 
+## What makes this one different
+
+HackBar has several WebExtension successors. They differ in *where the bar
+lives* — which is the one thing the original's design was actually about.
+
+| Project | Surface | Toggle |
+|---|---|---|
+| `noobfromvn/hackbar` | DevTools panel | — |
+| `mxcxvn/newhackbar` (New Hackbar) | Browser sidebar | F9 |
+| `Jalkhov/hackbar-future` | Browser sidebar | F1 |
+| `PhHitachi/HackBar` | Toolbar popup | — |
+| **HackBar Classic** | **In-page overlay** + DevTools panel | **F9** |
+
+A sidebar is vertical, down the side of the window. A DevTools panel sits at the
+bottom of the toolbox. A popup floats and dismisses when you click away. The
+original was a horizontal toolbar directly beneath the address bar, and none of
+those geometries reproduce it.
+
+This is the only one of them that renders **in the page viewport**, pinned to
+the top — which is why it reads as the bar it replaces rather than as a panel
+that happens to hold the same buttons. It is also the only one that offers both
+surfaces at once over shared state, so there is still a bar on `about:` and
+`view-source:` pages, where no content script is permitted to run.
+
+The keybinding is *not* the distinction — several successors also bind F9.
+Surfaces above are read from each project's `manifest.json`; SecuriTeam's AMO
+build is not on GitHub, but its listing describes itself as a "developer tool
+panel".
+
+---
+
 ## Install
 
 Firefox refuses to permanently install unsigned extensions in release builds, so
