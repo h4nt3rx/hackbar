@@ -226,3 +226,15 @@ work the same way.
 <img width="1180" height="560" alt="image" src="https://github.com/user-attachments/assets/6541fd15-3cad-4ded-8e4c-dd645a795d70" />
 
 
+---
+
+## License
+
+MIT — see [LICENSE](../LICENSE).
+
+`lib/md5.js` is a standard RFC 1321 implementation of public-domain lineage
+(the same core as blueimp/js-md5, MIT) and adds no further restrictions.
+
+HackBar Classic is intended for authorised security testing only. Using it
+against systems you do not own or have written permission to test is your
+responsibility, not the author's.
