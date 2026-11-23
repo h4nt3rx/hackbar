@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Palette sampled from the author's avatar: plum #1b0b26 / lavender #e2dcf2.
+       Bolt, not a portrait: the toolbar button renders at 16px, where any
+       detailed mark turns to mush. -->
+  <rect width="64" height="64" rx="12" fill="#1b0b26"/>
+  <path d="M38 5 L15 36 h12 l-3 23 L50 27 H35 z" fill="#e2dcf2"/>
+</svg>

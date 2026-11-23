@@ -1,0 +1,214 @@
+/* ============================================================
+   HackBar Classic - deliberately period-correct chrome:
+   light grey toolbar, hairline borders, 11px Tahoma.
+   Colours are pinned so the DevTools dark theme cannot
+   repaint the panel away from the classic look.
+   ============================================================ */
+
+/* ------------------------------------------------------------------
+   DENSITY
+   Sized to read comfortably at 100% browser zoom on a 1x display.
+   The classic screenshots people remember are often downscaled or
+   HiDPI captures, which look tighter than the bar actually was.
+   Want it tighter (or looser)? Change this one value - 0.85 is
+   close to a typical scaled screenshot, 1.15 is roomier.
+   ------------------------------------------------------------------ */
+#hb, .hb-pop { zoom: 1; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #f0f0f0;
+  color: #000;
+  font: 11px Tahoma, "Segoe UI", "DejaVu Sans", sans-serif;
+  overflow: hidden;
+}
+
+body #hb {
+  height: 100%;
+}
+
+/* restated for the shadow-root mount, which has no <body> ancestor */
+#hb, .hb-pop {
+  font: 11px Tahoma, "Segoe UI", "DejaVu Sans", sans-serif;
+  color: #000;
+}
+
+#hb {
+  display: block;
+  padding: 2px 4px 0 4px;
+  background: #f0f0f0;
+}
+
+/* ---------- top menu bar ---------- */
+.hb-menubar {
+  height: 18px;
+  line-height: 18px;
+  white-space: nowrap;
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 3px;
+}
+
+.hb-menubar > * { vertical-align: middle; }
+
+#injMode {
+  font: 10px Tahoma, sans-serif;
+  height: 16px;
+  border: 1px solid #a9a9a9;
+  background: #fff;
+  color: #000;
+  margin-right: 6px;
+  padding: 0 2px;
+}
+
+.hb-dots { display: inline-block; margin-right: 10px; }
+
+.dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: 3px;
+  border: 1px solid rgba(0,0,0,.28);
+  opacity: .35;
+}
+.dot-idle { background: #9aa0a6; }
+.dot-ok   { background: #35c15d; }
+.dot-warn { background: #e8b020; }
+.dot.on   { opacity: 1; }
+
+.hb-menu {
+  display: inline-block;
+  padding: 0 5px;
+  height: 16px;
+  line-height: 16px;
+  cursor: default;
+  border: 1px solid transparent;
+  user-select: none;
+}
+.hb-menu:hover,
+.hb-menu.open {
+  background: #e2e6ea;
+  border: 1px solid #b6bcc2;
+}
+.hb-menu b { font-weight: normal; margin-left: 3px; font-size: 9px; }
+
+.hb-spacer { display: inline-block; width: 12px; }
+
+.hb-status {
+  color: #555;
+  font-size: 10px;
+}
+.hb-status.err { color: #b00020; }
+.hb-status.ok  { color: #1c7a35; }
+
+/* ---------- main row ---------- */
+.hb-main {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.hb-buttons,
+.hb-fields,
+.hb-plus { display: table-cell; vertical-align: top; }
+
+.hb-buttons { width: 80px; padding-right: 4px; }
+.hb-plus    { width: 22px; padding-left: 4px; }
+
+.hb-buttons button,
+.hb-plus button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1px;
+  padding: 0 4px;
+  height: 17px;
+  font: 10px Tahoma, sans-serif;
+  text-align: left;
+  color: #000;
+  background: linear-gradient(#fdfdfd, #e6e6e6);
+  border: 1px solid #a9a9a9;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.hb-buttons button:hover,
+.hb-plus button:hover { background: linear-gradient(#ffffff, #dcdcdc); }
+.hb-buttons button:active,
+.hb-plus button:active { background: #d4d4d4; }
+
+.hb-buttons .gly { float: right; color: #666; }
+
+.hb-plus button { text-align: center; font-weight: bold; }
+
+/* ---------- text fields ---------- */
+.hb-fields textarea {
+  display: block;
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  padding: 1px 3px;
+  font: 12px/1.4 "Courier New", monospace;
+  color: #000;
+  background: #fff;
+  border: 1px solid #a9a9a9;
+  border-radius: 2px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.hb-fields textarea:focus { outline: 1px solid #6ea8d8; }
+
+#refBox { min-height: 24px; height: 24px; }
+
+.hb-sub { margin-top: 3px; }
+.hb-sublabel {
+  display: block;
+  color: #444;
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+.hb-adv { padding: 2px 0; }
+.hb-adv .ck { margin-right: 14px; }
+
+/* ---------- footer ---------- */
+.hb-footer {
+  margin-top: 3px;
+  padding: 2px 0 3px 84px;
+  border-top: 1px solid #d2d2d2;
+}
+.ck { cursor: pointer; user-select: none; }
+.ck input { vertical-align: -2px; margin: 0 4px 0 0; }
+
+/* ---------- dropdown menus ---------- */
+.hb-pop {
+  position: absolute;
+  z-index: 9999;
+  min-width: 190px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 2px;
+  background: #fff;
+  border: 1px solid #8f8f8f;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.28);
+}
+.hb-pop .item {
+  padding: 3px 10px;
+  white-space: nowrap;
+  cursor: default;
+}
+.hb-pop .item:hover { background: #3390ff; color: #fff; }
+.hb-pop .sep {
+  height: 0;
+  margin: 3px 2px;
+  border-top: 1px solid #dcdcdc;
+}
+.hb-pop .grp {
+  padding: 3px 6px 2px;
+  color: #777;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.hidden { display: none !important; }

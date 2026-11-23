@@ -1,0 +1,56 @@
+{
+  "manifest_version": 2,
+  "name": "HackBar Classic",
+  "version": "1.1.4",
+  "description": "A faithful recreation of the classic HackBar toolbar for modern Firefox. F9 for the in-page bar, or the HackBar DevTools panel. For authorised security testing only.",
+
+  "icons": {
+    "16": "icons/icon.svg",
+    "32": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["lib/md5.js", "background.js"],
+    "persistent": true
+  },
+
+  "devtools_page": "devtools.html",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["lib/md5.js", "payloads.js", "ui.js", "content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+
+  "web_accessible_resources": ["panel.css"],
+
+  "browser_action": {
+    "default_title": "Toggle HackBar (F9)",
+    "default_icon": {
+      "16": "icons/icon.svg",
+      "32": "icons/icon.svg",
+      "48": "icons/icon.svg",
+      "96": "icons/icon.svg"
+    }
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "hackbar-classic@local.tool",
+      "strict_min_version": "115.0"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# local editor state
+.vscode/
+.idea/
+
+# packaging scratch - the shipped hackbar-classic.xpi IS committed,
+# anything else zipped up for signing is not
+*.zip
+web-ext-artifacts/
