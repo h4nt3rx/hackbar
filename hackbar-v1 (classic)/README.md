@@ -216,3 +216,13 @@ Everything lives in `payloads.js`. Append to any menu array:
 
 `xform` may return a promise, so async transforms (anything via `crypto.subtle`)
 work the same way.
+
+## Screenshots
+
+<img width="1180" height="210" alt="image" src="https://github.com/user-attachments/assets/e1c38605-c2c4-4d97-8d83-2dafe68d9346" />
+
+<img width="1180" height="380" alt="image" src="https://github.com/user-attachments/assets/e32085ac-9a8e-45dc-ac23-2872905972ed" />
+
+<img width="1180" height="560" alt="image" src="https://github.com/user-attachments/assets/6541fd15-3cad-4ded-8e4c-dd645a795d70" />
+
+
