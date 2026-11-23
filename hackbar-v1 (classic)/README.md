@@ -228,6 +228,24 @@ work the same way.
 
 ---
 
+## Credits
+
+HackBar was created by **Johan Adriaans**, with contributions from **Pedro
+Laguna**. The original was a XUL extension, hosted first on Google Code and now
+archived at <https://github.com/johan-adriaans/hackbar>. It stopped working when
+Firefox 57 removed support for XUL extensions.
+
+This project is an independent reimplementation on the WebExtensions API,
+written from the original's observable behaviour — its interface, its
+keybindings and its placement. It is **not a port and contains no code from the
+original**, which is unlicensed and whose source therefore could not be reused.
+The design, and the idea of HackBar itself, belong to its original authors.
+
+Not affiliated with, endorsed by, or supported by the original authors. The name
+is used only to describe what this tool reimplements.
+
+---
+
 ## License
 
 MIT — see [LICENSE](../LICENSE).

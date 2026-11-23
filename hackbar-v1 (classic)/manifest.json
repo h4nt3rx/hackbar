@@ -3,6 +3,8 @@
   "name": "HackBar Classic",
   "version": "1.1.4",
   "description": "A faithful recreation of the classic HackBar toolbar for modern Firefox. F9 for the in-page bar, or the HackBar DevTools panel. For authorised security testing only.",
+  "author": "h4nt3rx",
+  "homepage_url": "https://github.com/h4nt3rx/hackbar",
 
   "icons": {
     "16": "icons/icon.svg",
